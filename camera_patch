@@ -1,0 +1,10 @@
+camera/CameraParameters.cpp
+const char CameraParameters::KEY_SHUTTER_SOUND_SELECT[] = "shutter-sound-select";
+const char CameraParameters::KEY_SHUTTER_SOUND[] ="shutter-sound";
+
+
+
+
+include/camera/CameraParameters.h
+    static const char KEY_SHUTTER_SOUND_SELECT[];
+    static const char KEY_SHUTTER_SOUND[];
