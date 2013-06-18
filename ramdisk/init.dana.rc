@@ -88,9 +88,6 @@ on fs
    exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
    setprop wifi.chip.type WCN_3660
 
-
-
-
 on boot
     exec system/bin/btnvtool -O
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -315,7 +312,7 @@ service rmt_storage /system/bin/rmt_storage
     user root
     disabled
 
-on property:ro.emmc=1
+on property:ro.boot.emmc=true
     start rmt_storage
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
