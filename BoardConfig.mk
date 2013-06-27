@@ -80,6 +80,11 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 TARGET_PROVIDES_LIBLIGHTS := true
 TARGET_PREBUILT_KERNEL := device/zte/dana/kernel
 
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/zte/msm8960
+TARGET_KERNEL_CONFIG := cm_dana_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
+
 #BOARD_HAS_NO_SELECT_BUTTON := true
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
