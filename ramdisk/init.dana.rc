@@ -80,6 +80,7 @@ on fs
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/cache /cache nosuid nodev barrier=1
     #------tombstones----------
     wait /dev/block/platform/msm_sdcc.1/by-name/tombstones
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/tombstones /tombstones nosuid nodev
 
    mkdir /tombstones/modem 0771 system system
    mkdir /tombstones/lpass 0771 system system
