@@ -1,9 +1,13 @@
  README.md                                                                                                                                                                                                   
  Working:
  ------------
- Wi-Fi
+ RIL
 
- Radio
+ Mobile Data
+
+ Phone
+
+ Mms
 
  Display
 
