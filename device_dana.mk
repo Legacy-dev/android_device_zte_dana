@@ -29,7 +29,8 @@ PRODUCT_COPY_FILES += \
      device/zte/dana/ramdisk/init.rc:root/init.rc \
      device/zte/dana/ramdisk/fstab.dana:root/fstab.dana \
      device/zte/dana/ramdisk/ueventd.dana.rc:root/ueventd.dana.rc \
-     device/zte/dana/ramdisk/usbconfig:root/sbin/usbconfig
+     device/zte/dana/ramdisk/usbconfig:root/sbin/usbconfig \
+     device/zte/dana/ramdisk/logo.bmp:root/logo.bmp
 
 #device idc setup
 PRODUCT_COPY_FILES += \
