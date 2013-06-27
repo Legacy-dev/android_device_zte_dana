@@ -86,6 +86,9 @@ on fs
    mkdir /tombstones/lpass 0771 system system
    mkdir /tombstones/wcnss 0771 system system
    mkdir /tombstones/dsps 0771 system system
+   mkdir /firmware 0771 system system
+   wait /dev/block/platform/msm_sdcc.1/by-name/modem
+   mount vfat /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro shortname=lower
    exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
    setprop wifi.chip.type WCN_3660
 
@@ -639,6 +642,7 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp --advance
 service kickstart /system/bin/qcks l
     oneshot
     disabled
+
 service qseecomd /system/bin/qseecomd
    class late_start
    user system
@@ -647,9 +651,11 @@ service qseecomd /system/bin/qseecomd
 on property:ro.baseband=mdm
     mkdir /data/qcks 0770 system system
     start kickstart
+
 service proximity_init /system/bin/proximity.init -r
     disabled
     oneshot
+
 on property:dev.bootcomplete=1
     start proximity_init
 
