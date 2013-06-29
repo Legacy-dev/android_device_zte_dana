@@ -157,6 +157,9 @@ on boot
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
+    
+    write /dev/wcnss_wlan 1
+    write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
     # create symlink to qcn wpa_supplicant folder
     mkdir /data/system 0775 system system
@@ -326,9 +329,16 @@ on property:ro.boot.emmc=true
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
-    group qcom_oncrpc bluetooth net_bt_admin
+    group qcom_oncrpc bluetooth net_bt_admin system
     disabled
     oneshot
+
+on property:bluetooth.hciattach=true
+    start hciattach
+
+on property:bluetooth.hciattach=false
+    setprop bluetooth.status off
+    
 #ZTE_zhukaidi_TESTMODE_001 20111025 +++
 service bttestmode /system/bin/sh /system/bin/bt_testmode_new.sh
     user root
