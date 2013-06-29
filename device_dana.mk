@@ -74,7 +74,6 @@ PRODUCT_COPY_FILES += \
      device/zte/dana/modules/reset_modem.ko:system/lib/modules/reset_modem.ko \
      device/zte/dana/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
      device/zte/dana/modules/spidev.ko:system/lib/modules/spidev.ko \
-     device/zte/dana/modules/prima/prima_wlan.ko:system/lib/modules/prima/prima_wlan.ko \
      device/zte/dana/modules/wlan.ko:system/lib/modules/wlan.ko \
      device/zte/dana/modules/zte_krait_oc.ko:system/lib/modules/zte_krait_oc.ko
 

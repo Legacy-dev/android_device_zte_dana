@@ -402,28 +402,20 @@ service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
     disabled
     oneshot
 
-service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -e/data/misc/wifi/entropy.bin -c/data/misc/wifi/wpa_supplicant.conf
-
-    #   we will start as root and wpa_supplicant will switch to user wifi
-    #   after setting up the capabilities required for WEXT
-       user root
-       group wifi inet keystore
-    class main
-    socket wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
-
-
-# New supplicant service config to support both BCM4334 / WCN3660
-service p2p_supplicant /system/bin/wpa_supplicant -iwlan0 -Dnl80211 -e/data/misc/wifi/entropy.bin -c/data/misc/wifi/wpa_supplicant.conf
-    #   we will start as root and wpa_supplicant will switch to user wifi
-    #   after setting up the capabilities required for WEXT
+service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
     user root
-    group wifi inet keystore
-    class main
-    socket wpa_wlan0 dgram 660 wifi wifi
+    group wifi inet
+    socket wpa_wlan0 dgram 0660 wifi wifi
     disabled
     oneshot
+
+service p2p_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+    user root
+    group wifi inet
+    socket wpa_wlan0 dgram 0660 wifi wifi
+    disabled
+    oneshot
+
 
 service dhcpcd_wlan0 /system/bin/dhcpcd -BKLG
     class late_start
