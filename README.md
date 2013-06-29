@@ -1,6 +1,10 @@
  README.md                                                                                                                                                                                                   
  Working:
  ------------
+ Wi-Fi
+
+ Bluetooth
+
  RIL
 
  Mobile Data
@@ -23,11 +27,7 @@
  Not Working
  --------------
 
- Audio
-
- Wi-Fi
-
- Bluetooth
+ Audio(Maybe some bugs,who can help?)
 
 
  Kernel
