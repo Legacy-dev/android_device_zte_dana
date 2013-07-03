@@ -284,6 +284,12 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
+service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x
+    class main
+    user bluetooth
+    group system bluetooth
+    oneshot
+
 # Export GPIO56 for fusion targets to enable/disable hub
 service usbhub_init /system/bin/usbhub_init
    class late_start

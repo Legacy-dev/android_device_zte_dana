@@ -156,6 +156,9 @@ PRODUCT_COPY_FILES += \
      device/zte/dana/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
      device/zte/dana/configs/apns-conf.xml:system/etc/apns-conf.xml
 
+# BT addr
+PRODUCT_PACKAGES += \
+    bdAddrLoader
 # Torch
 PRODUCT_PACKAGES += \
 		Torch
