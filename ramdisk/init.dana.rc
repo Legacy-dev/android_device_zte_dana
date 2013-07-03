@@ -109,6 +109,7 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0666 /persist/.bt_nv.bin
+    chmod 0666 /data/misc/prox/prox_threshold.txt
 
 	#ZTE_ALSPRX_001  start  
     mkdir /data/misc/prox 0777 radio radio   
